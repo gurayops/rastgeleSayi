@@ -1,1 +1,1 @@
-print("empty")
+print("empty line")
