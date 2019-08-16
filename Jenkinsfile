@@ -1,12 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:2'
-        }
-    }
+  agent any
   stages {
     stage('Get Code') {
       steps {
+        sh 'id'
         sh 'pip install -r requirements.txt'
         fileExists 'rastgele.py'
       }
