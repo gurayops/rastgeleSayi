@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+    agent {
+      docker {
+          image 'python:2'
+      }
+    }
   stages {
     stage('Get Code') {
       steps {
