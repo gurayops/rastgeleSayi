@@ -16,7 +16,7 @@ pipeline {
     stage('Check quality') {
       steps {
         sh 'pip install --user xenon'
-        sh 'xenon --max-absolute B --max-modules A --max-average A'
+        sh 'xenon --help'
       }
     }
     stage('Generate Artifact') {
