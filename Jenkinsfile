@@ -10,6 +10,7 @@ pipeline {
     stage('Create Docker Image') {
       steps {
         sh 'docker build -t rastgelesayi:${BUILD_NUMBER} .'
+        sh 'docker service update --image '${BUILD_NUMBER}' ortamasa
       }
     }
   }
