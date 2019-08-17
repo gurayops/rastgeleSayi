@@ -19,6 +19,7 @@ pipeline {
       }
     }
     stage('Create Docker Image') {
+      agent any
       steps {
         sh 'docker build -t rastgelesayi:${BUILD_NUMBER} .'
       }
