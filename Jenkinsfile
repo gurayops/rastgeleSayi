@@ -16,7 +16,6 @@ pipeline {
     stage('Check quality') {
       steps {
         sh 'pip install --user xenon'
-        sh 'xenon --help'
       }
     }
     stage('Create Docker Image') {
