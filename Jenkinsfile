@@ -1,22 +1,10 @@
 pipeline {
-    agent {
-      docker {
-          image 'python:2'
-          args '-u root'
-      }
-    }
+    agent any
   stages {
     stage('Get Code') {
       steps {
         sh 'id'
-        sh 'pip install --user -r requirements.txt'
         fileExists 'rastgele.py'
-      }
-    }
-    stage('Check quality') {
-      steps {
-        sh 'pip install --user xenon'
-        sh 'xenon --help'
       }
     }
     stage('Create Docker Image') {
