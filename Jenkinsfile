@@ -19,9 +19,9 @@ pipeline {
         sh 'xenon --help'
       }
     }
-    stage('Generate Artifact') {
+    stage('Create Docker Image') {
       steps {
-        archiveArtifacts '*'
+        sh 'docker build -t rastgelesayi:${BUILD_NUMBER} .'
       }
     }
   }
