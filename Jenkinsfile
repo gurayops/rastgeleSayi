@@ -21,6 +21,7 @@ pipeline {
 
     stage('Deploy to prod') {
       steps {
+        input message: 'Finished using the web site? (Click "Proceed" to continue)'
         sh 'docker service update --image rastgelesayi:${BUILD_NUMBER} torm'
       }
     }
