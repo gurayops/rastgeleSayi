@@ -15,7 +15,7 @@ pipeline {
     stage('Test speed') {
       steps {
         sh 'docker run -d --rm --name toberemoved --network test rastgelesayi:${BUILD_NUMBER}'
-        sh 'docker run -it --rm --network test guray/httping:0.1 -c 10 http://toberemoved'
+        sh 'docker run --rm --network test guray/httping:0.1 -c 10 http://toberemoved'
         sh 'docker rm -f toberemoved'
       }
     }   
