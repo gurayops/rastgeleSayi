@@ -5,5 +5,7 @@ WORKDIR /code
 
 RUN pip install -r requirements.txt
 
-CMD gunicorn -b 0.0.0.0:80 rastgele:api
+EXPOSE 8000
+
+CMD gunicorn -b 0.0.0.0:8000 rastgele:api
 
